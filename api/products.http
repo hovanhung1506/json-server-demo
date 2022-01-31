@@ -1,0 +1,54 @@
+@baseUrl = http://localhost:3003/api/
+@resourceName=products
+
+# @name get_All
+GET {{baseUrl}}/{{resourceName}}
+
+### 
+
+# @name filter
+GET {{baseUrl}}/{{resourceName}}?color=lime&price_gte=400&price_lte=900
+
+### 
+
+# @name pagination
+GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=10
+
+###
+
+# @name sort
+GET {{baseUrl}}/{{resourceName}}?_sort=price&_order=asc
+
+### 
+
+# @name search_like
+GET {{baseUrl}}/{{resourceName}}?name_like=sleek
+
+###
+
+# @name add_New
+POST {{baseUrl}}/{{resourceName}}
+Content-Type: application/json
+
+{
+  "categoryId": "6224ecb0-b2f8-4632-84f0-96dcc9c3a900",
+  "name": "Awesome Cotton Hat",
+  "color": "black",
+  "price": 777,
+  "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+  "createdAt": 1643643585925,
+  "updatedAt": 1643643585925,
+  "thumbnailUrl": "http://placeimg.com/640/480"
+}
+
+###
+
+# @name Update
+PATCH {{baseUrl}}/{{resourceName}}/CDLHKIU
+Content-Type: application/json
+
+{
+  "name": "Awesome Cotton Hat Update",
+  "color": "red",
+  "price": 888
+}

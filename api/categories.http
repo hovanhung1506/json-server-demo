@@ -1,0 +1,7 @@
+@baseUrl = http://localhost:3003/api/
+@resourceName=categories
+
+# @name get_All
+GET {{baseUrl}}/{{resourceName}}
+
+###
